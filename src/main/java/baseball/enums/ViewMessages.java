@@ -10,7 +10,13 @@ public enum ViewMessages {
 
     // Output
     GAME_START("숫자 야구 게임을 시작합니다."),
-    GAME_END("{0}개의 숫자를 모두 맞히셨습니다! 게임 종료");
+    GAME_END("{0}개의 숫자를 모두 맞히셨습니다! 게임 종료"),
+
+    RESULT_STRIKE("{0}스트라이크"),
+    RESULT_BALL("{0볼}"),
+    RESULT_BALL_STRIKE("{0}볼 {1}스트라이크"),
+    RESULT_NOTHING("낫싱"),
+    ;
 
     private final String message;
 

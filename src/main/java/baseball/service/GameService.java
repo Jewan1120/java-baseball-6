@@ -10,4 +10,8 @@ public class GameService {
         return Randoms.pickUniqueNumbersInRange(Constants.NUMBER_LOWERBOUND.getValue(),
                 Constants.NUMBER_UPPERBOUND.getValue(), Constants.NUMBERS_LENGTH.getValue());
     }
+
+    public List<Integer> makeNumbers(String inputString) {
+        return inputString.chars().mapToObj(c -> c - '0').toList();
+    }
 }

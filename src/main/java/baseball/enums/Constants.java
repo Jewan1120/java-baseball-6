@@ -6,6 +6,9 @@ public enum Constants {
 
     NUMBER_LOWERBOUND(1),
     NUMBER_UPPERBOUND(9),
+
+    RESTART_YES(1),
+    RESTART_NO(2),
     ;
 
     private final int value;

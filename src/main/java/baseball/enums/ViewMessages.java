@@ -13,7 +13,7 @@ public enum ViewMessages {
     GAME_END("{0}개의 숫자를 모두 맞히셨습니다! 게임 종료"),
 
     RESULT_STRIKE("{0}스트라이크"),
-    RESULT_BALL("{0볼}"),
+    RESULT_BALL("{0}볼"),
     RESULT_BALL_STRIKE("{0}볼 {1}스트라이크"),
     RESULT_NOTHING("낫싱"),
     ;

@@ -13,16 +13,16 @@ public class OutputView {
     public void printResult(List<Integer> result) {
         int ball = result.get(Constants.BALL_INDEX.getValue());
         int strike = result.get(Constants.STRIKE_INDEX.getValue());
-        ViewMessages messages = ViewMessages.RESULT_NOTHING;
+        String message = ViewMessages.RESULT_NOTHING.getMessage();
         if (ball > 0 && strike > 0) {
-            messages = ViewMessages.RESULT_BALL_STRIKE;
+            message = ViewMessages.RESULT_BALL_STRIKE.getMessage(ball,strike);
         }
         if (ball == 0 && strike > 0) {
-            messages = ViewMessages.RESULT_STRIKE;
+            message = ViewMessages.RESULT_STRIKE.getMessage(strike);
         }
         if (ball > 0 && strike == 0) {
-            messages = ViewMessages.RESULT_BALL;
+            message = ViewMessages.RESULT_BALL.getMessage(ball);
         }
-        System.out.println(messages.getMessage(ball, strike));
+        System.out.println(message);
     }
 }

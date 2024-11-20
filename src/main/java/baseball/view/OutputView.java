@@ -15,7 +15,7 @@ public class OutputView {
         int strike = result.get(Constants.STRIKE_INDEX.getValue());
         String message = ViewMessages.RESULT_NOTHING.getMessage();
         if (ball > 0 && strike > 0) {
-            message = ViewMessages.RESULT_BALL_STRIKE.getMessage(ball,strike);
+            message = ViewMessages.RESULT_BALL_STRIKE.getMessage(ball, strike);
         }
         if (ball == 0 && strike > 0) {
             message = ViewMessages.RESULT_STRIKE.getMessage(strike);
@@ -24,5 +24,9 @@ public class OutputView {
             message = ViewMessages.RESULT_BALL.getMessage(ball);
         }
         System.out.println(message);
+    }
+
+    public void printGameEnd() {
+        System.out.println(ViewMessages.GAME_END.getMessage(Constants.NUMBERS_LENGTH.getValue()));
     }
 }

@@ -1,6 +1,7 @@
 package baseball.controller;
 
 import baseball.service.GameService;
+import baseball.validator.GameValidator;
 import baseball.view.InputView;
 import baseball.view.OutputView;
 import java.util.List;
@@ -11,7 +12,7 @@ public class GameController {
     private final InputView inputView;
     private final GameService service;
 
-    private List<Integer> numbers;
+    private List<Integer> ComputerNumbers;
 
     public GameController() {
         this.outputView = new OutputView();
@@ -21,14 +22,20 @@ public class GameController {
 
     public void run() {
         printGameStart();
-        makeNumbers();
+        makeComputerNumbers();
     }
 
     private void printGameStart() {
         outputView.printGameStart();
     }
 
-    private void makeNumbers() {
-        numbers = service.makeNumbers();
+    private void makeComputerNumbers() {
+        ComputerNumbers = service.makeNumbers();
+    }
+
+    private List<Integer> promptNumbers() {
+        String inputString = inputView.promptNumbers();
+        GameValidator.validateNumbers(inputString);
+        return service.makeNumbers(inputString);
     }
 }

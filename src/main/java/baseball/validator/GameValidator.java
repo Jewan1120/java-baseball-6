@@ -12,6 +12,11 @@ public class GameValidator {
         checkUnique(inputString);
     }
 
+    public static void validateRestart(String inputString) {
+        checkEmpty(inputString);
+        checkFormat(inputString);
+    }
+
     private static void checkEmpty(String inputString) {
         if (inputString == null || inputString.isEmpty()) {
             throw new IllegalArgumentException(ErrorMessages.INPUT_EMPTY.getMessage());
@@ -37,4 +42,11 @@ public class GameValidator {
         }
     }
 
+    private static void checkFormat(String inputString) {
+        String yes = String.valueOf(Constants.RESTART_YES.getValue());
+        String no = String.valueOf(Constants.RESTART_YES.getValue());
+        if(!(inputString.equals(yes) ||inputString.equals(no))) {
+            throw new IllegalArgumentException(ErrorMessages.INPUT_FORMAT.getMessage(yes,no));
+        }
+    }
 }

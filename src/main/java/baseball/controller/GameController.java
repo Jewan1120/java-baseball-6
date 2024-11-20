@@ -25,6 +25,7 @@ public class GameController {
         printGameStart();
         makeComputerNumbers();
         proceedGame();
+        printGameEnd();
     }
 
     private void printGameStart() {
@@ -49,5 +50,9 @@ public class GameController {
         String inputString = inputView.promptNumbers();
         GameValidator.validateNumbers(inputString);
         return service.makeNumbers(inputString);
+    }
+
+    private void printGameEnd() {
+        outputView.printGameEnd();
     }
 }

@@ -22,10 +22,14 @@ public class GameController {
     }
 
     public void run() {
-        printGameStart();
-        makeComputerNumbers();
-        proceedGame();
-        printGameEnd();
+        boolean restartFlag = true;
+        while (restartFlag) {
+            printGameStart();
+            makeComputerNumbers();
+            proceedGame();
+            printGameEnd();
+            restartFlag = checkGameRestart();
+        }
     }
 
     private void printGameStart() {
@@ -54,5 +58,12 @@ public class GameController {
 
     private void printGameEnd() {
         outputView.printGameEnd();
+    }
+
+    private boolean checkGameRestart() {
+        String inputString = inputView.promptRestart();
+        GameValidator.validateRestart(inputString);
+        String yes = String.valueOf(Constants.RESTART_YES.getValue());
+        return inputString.equals(yes);
     }
 }

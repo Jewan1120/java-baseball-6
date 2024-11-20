@@ -7,6 +7,9 @@ public enum Constants {
     NUMBER_LOWERBOUND(1),
     NUMBER_UPPERBOUND(9),
 
+    BALL_INDEX(0),
+    STRIKE_INDEX(1),
+
     RESTART_YES(1),
     RESTART_NO(2),
     ;
